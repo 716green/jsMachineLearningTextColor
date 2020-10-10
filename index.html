@@ -1,3 +1,5 @@
+<!-- https://youtu.be/60c4rMq-aH0?t=1186 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,37 +11,79 @@
 <script src="script.js" defer></script>
 <script defer>
   document.addEventListener("DOMContentLoaded", ready);
+
     function ready() {
     let refreshButton = document.getElementById('refresh').addEventListener("click", refreshPage)
-    let aiValue = document.getElementById('aiValue').innerHTML = results
-  }
+    document.getElementById('aiValue').innerHTML = results
+    }
+
     function refreshPage() {
       location.reload()
-    }  
+    }
 </script>
 <style>
-  * {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-  }
-  h2, h3 {
-    margin: .5rem;
-  }
-  
-  .btn {
-    margin-right: 20px;
-    background-color: #008CBA;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-  .info {
-    display: flex;
-    margin: auto;
-  }
+* {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+h2, h3 {
+  margin: .5rem;
+}
+#color {
+  width: 400px;
+  height: 200px;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#aiValue {
+  padding: 10px;
+}
+.btn {
+  margin: 10px;
+  background-color: #008CBA;
+  border: solid 1px black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+}
+.info {
+  display: flex;
+  margin: auto;
+}
+.whiteBtn {
+  background-color: whitesmoke;
+  color: black;
+
+}
+.blackBtn {
+  color: whitesmoke;
+  background-color: black;
+}
+.white {
+  color: white;
+}
+/* .printBtn {
+} */
+.boxText {
+  font-weight: 500;
+}
+.display {
+  display: flex;
+  margin: auto;
+  width: 400px;
+}
+.bottomButtons {
+  display: flex;
+  margin: auto;
+  width: 400px;
+  justify-content: space-evenly;
+}
 </style>
 <body>
   <h2>Machine Learning Model</h2>
@@ -49,7 +93,20 @@
     <strong id="aiValue">
     </strong>
   </div>
-  <hr>
+  <hr />
+  <div class="display">
+    <div id="color">
+      <div class="white boxText">White Text</div>
+      <div class="boxText">Black Text</div>
+      <div id="guess" class="boxText">Guess Text</div>
+    </div>
+  </div>
+  <div class="bottomButtons">
+    <button id="white-button" class="btn whiteBtn">White</button>
+    <button id="black-button" class="btn blackBtn">Black</button>
+    <button id="print-button" class="btn printBtn">Print</button>
+  </div>
+  <hr />
     <div id="diagram"></div>
 </body>
 </html>
